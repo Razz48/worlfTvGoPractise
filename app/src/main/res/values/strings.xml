@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WorldTvGo</string>
+    <string name="login_to_account">Login to Your account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sony_entertainment">Sony Entertainment</string>
+</resources>

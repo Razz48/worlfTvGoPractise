@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#A3A5A7</color>
+    <color name="get_start">#161617</color>
+    <color name="createAnAccount">#9C2677</color>
+    <color name="red">#FF0000</color>
+    <color name="normal_color">#00000000</color> <!-- Transparent or background color -->
+    <color name="pressed_color">#33333333</color> <!-- Slightly darker -->
+    <color name="selected_color">#55555555</color> <!-- Highlight color -->
+    <color name="channel_background">#2D2D2D</color>
+
+</resources>
