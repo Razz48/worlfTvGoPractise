@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/get_start"
+    android:layout_marginLeft="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/big_img_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/recycler_image"
+            android:layout_width="275dp"
+            android:layout_height="155dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_recycler"
+            app:layout_constraintBottom_toTopOf="@+id/youtube_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/youtube_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/show_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_image">
+
+            <ImageView
+                android:id="@+id/youtube_imgfirst"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/youtbe_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recycler_image" />
+
+            <ImageView
+                android:id="@+id/dot_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/dot_icon"
+                app:layout_constraintBottom_toBottomOf="@id/youtube_img"
+                app:layout_constraintStart_toEndOf="@id/youtube_img"
+                app:layout_constraintTop_toTopOf="@id/youtube_img" />
+
+            <TextView
+                android:id="@+id/language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/youtube_img"
+                app:layout_constraintStart_toEndOf="@id/dot_img"
+                app:layout_constraintTop_toTopOf="@id/youtube_img"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/dot_img2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/dot_icon"
+                app:layout_constraintBottom_toBottomOf="@id/dot_img"
+                app:layout_constraintStart_toEndOf="@id/language"
+                app:layout_constraintTop_toTopOf="@id/dot_img" />
+
+            <TextView
+                android:id="@+id/playing_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Playing Now"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/language"
+                app:layout_constraintStart_toEndOf="@id/dot_img2"
+                app:layout_constraintTop_toTopOf="@id/language" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/show_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:text="Next | Onward 2020 Animation"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youtube_img" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/show_title">
+
+            <ImageView
+                android:id="@+id/season_txt"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/sony_tv_logo"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/show_title" />
+
+
+            <ImageView
+                android:id="@+id/dot_img3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/dot_icon"
+                app:layout_constraintBottom_toBottomOf="@id/season_txt"
+                app:layout_constraintStart_toEndOf="@id/season_txt"
+                app:layout_constraintTop_toTopOf="@id/season_txt" />
+
+            <TextView
+                android:id="@+id/channel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sony Entertainment"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/season_txt"
+                app:layout_constraintStart_toEndOf="@id/dot_img3"
+                app:layout_constraintTop_toTopOf="@id/season_txt" />
+
+
+            <ImageView
+                android:id="@+id/dot_img4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/dot_icon"
+                app:layout_constraintBottom_toBottomOf="@id/dot_img3"
+                app:layout_constraintStart_toEndOf="@id/channel_name"
+                app:layout_constraintTop_toTopOf="@id/dot_img3" />
+
+            <ImageView
+                android:id="@+id/views_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eye_icon"
+                app:layout_constraintBottom_toBottomOf="@id/channel_name"
+                app:layout_constraintStart_toEndOf="@id/dot_img4"
+                app:layout_constraintTop_toTopOf="@id/channel_name" />
+
+            <TextView
+                android:id="@+id/view_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1212"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/views_icon"
+                app:layout_constraintStart_toEndOf="@id/views_icon"
+                app:layout_constraintTop_toTopOf="@id/views_icon" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/big_img_ll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/big_img_ll"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/recycler_image_small"
+            android:layout_width="122dp"
+            android:layout_height="155dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/image_small_recycler"
+            app:layout_constraintBottom_toTopOf="@+id/youtube_img1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/youtube_img1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/show_title_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/recycler_image_small"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_image_small">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/youtbe_icon"
+                app:layout_constraintStart_toStartOf="@id/recycler_image_small"
+                app:layout_constraintTop_toBottomOf="@id/recycler_image_small" />
+
+            <ImageView
+                android:id="@+id/dot_img_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/dot_icon"
+                app:layout_constraintBottom_toBottomOf="@id/youtube_img1"
+                app:layout_constraintStart_toEndOf="@id/youtube_img1"
+                app:layout_constraintTop_toTopOf="@id/youtube_img1" />
+
+            <TextView
+                android:id="@+id/language_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/youtube_img1"
+                app:layout_constraintStart_toEndOf="@id/dot_img_one"
+                app:layout_constraintTop_toTopOf="@id/youtube_img1"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/show_title_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:text="Barbie"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/youtube_img1"
+            app:layout_constraintTop_toBottomOf="@+id/youtube_img1" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/show_title_one"
+            app:layout_constraintTop_toBottomOf="@+id/show_title_one">
+
+            <ImageView
+                android:id="@+id/views_icon_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eye_icon"
+                app:layout_constraintStart_toStartOf="@id/show_title_one"
+                app:layout_constraintTop_toBottomOf="@id/show_title_one" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1212"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/views_icon_one"
+                app:layout_constraintStart_toEndOf="@id/views_icon_one"
+                app:layout_constraintTop_toTopOf="@id/views_icon_one" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

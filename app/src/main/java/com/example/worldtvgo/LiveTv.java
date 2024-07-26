@@ -1,36 +1,26 @@
 package com.example.worldtvgo;
 
-import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.OptIn;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
-import androidx.media3.common.MimeTypes;
-import androidx.media3.common.Player;
 import androidx.media3.common.util.UnstableApi;
-import androidx.media3.common.util.Util;
-import androidx.media3.datasource.DataSource;
-import androidx.media3.datasource.DefaultDataSourceFactory;
 import androidx.media3.datasource.DefaultHttpDataSource;
 import androidx.media3.exoplayer.ExoPlayer;
-import androidx.media3.exoplayer.source.ConcatenatingMediaSource;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.ProgressiveMediaSource;
-import androidx.media3.ui.DefaultTimeBar;
-import androidx.media3.ui.TimeBar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.worldtvgo.Adapter.CategoryListAdapter;
+import com.example.worldtvgo.Adapter.ChannelListAdapter;
+import com.example.worldtvgo.Model.Channel;
 import com.example.worldtvgo.databinding.ActivityLiveTvListBinding;
 import com.example.worldtvgo.databinding.CustomPlaybackControlViewBinding;
 
@@ -39,7 +29,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @UnstableApi
-public class LiveTv extends AppCompatActivity implements CategoryListAdapter.OnCategoryClickListner,ChannelListAdapter.OnChannelClickListner,View.OnClickListener {
+public class LiveTv extends AppCompatActivity implements CategoryListAdapter.OnCategoryClickListner, ChannelListAdapter.OnChannelClickListner,View.OnClickListener {
 
     private List<Channel> allChannel;
     private ChannelListAdapter channelListAdapter;

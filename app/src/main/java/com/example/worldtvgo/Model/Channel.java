@@ -1,4 +1,4 @@
-package com.example.worldtvgo;
+package com.example.worldtvgo.Model;
 
 import java.io.Serializable;
 

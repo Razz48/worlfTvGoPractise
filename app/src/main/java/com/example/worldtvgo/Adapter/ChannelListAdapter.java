@@ -1,4 +1,4 @@
-package com.example.worldtvgo;
+package com.example.worldtvgo.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.example.worldtvgo.Model.Channel;
+import com.example.worldtvgo.R;
 
 import java.util.List;
 
