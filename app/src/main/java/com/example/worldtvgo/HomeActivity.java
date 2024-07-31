@@ -6,10 +6,13 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.worldtvgo.Adapter.CategoryAdapter;
+
 import com.example.worldtvgo.Model.Category;
+import com.example.worldtvgo.Model.GenreItem;
 import com.example.worldtvgo.Model.InnerItem;
 import com.example.worldtvgo.databinding.ActivityHomeBinding;
 
@@ -31,6 +34,11 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(view);
 //        setContentView(R.layout.activity_home);
 
+//        RecyclerView recyclerView = homeBinding.categoryRecycler;
+//        categoryName = new ArrayList<>();
+//        categoryAdapter = new CategoryAdapter(categoryName, this);
+//        recyclerView.setAdapter(categoryAdapter);
+
         categoryName=new ArrayList<>();
         categoryName.add(new Category("Featured", Arrays.asList(
                 new InnerItem(R.drawable.image_recycler, R.drawable.image_small_recycler, R.drawable.youtbe_icon,
@@ -49,7 +57,7 @@ public class HomeActivity extends AppCompatActivity {
                         "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221)
         )));
         categoryName.add(new Category("Continue Watching",Arrays.asList(new InnerItem(R.drawable.image_recycler,R.drawable.image_small_recycler,R.drawable.youtbe_icon,
-                "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221),
+                        "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221),
                 new InnerItem(R.drawable.image_recycler,R.drawable.image_small_recycler,R.drawable.youtbe_icon,
                         "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221),
                 new InnerItem(R.drawable.image_recycler,R.drawable.image_small_recycler,R.drawable.youtbe_icon,
@@ -63,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
         categoryName.add(new Category("Entertainment",Arrays.asList(new InnerItem(R.drawable.image_recycler,R.drawable.image_small_recycler,R.drawable.youtbe_icon,
-                "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221),
+                        "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221),
                 new InnerItem(R.drawable.image_recycler,R.drawable.image_small_recycler,R.drawable.youtbe_icon,
                         "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221),
                 new InnerItem(R.drawable.image_recycler,R.drawable.image_small_recycler,R.drawable.youtbe_icon,
@@ -81,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
         categoryName.add(new Category("Thriller",Arrays.asList(new InnerItem(R.drawable.image_recycler,R.drawable.image_small_recycler,R.drawable.youtbe_icon,
-                "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221),
+                        "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221),
                 new InnerItem(R.drawable.image_recycler,R.drawable.image_small_recycler,R.drawable.youtbe_icon,
                         "English","Playing","Next | Onward 2020 Animation",R.drawable.sony_tv_logo,"Sony EntertainMent",1221),
                 new InnerItem(R.drawable.image_recycler,R.drawable.image_small_recycler,R.drawable.youtbe_icon,
@@ -104,6 +112,10 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private void setCategory(){
+
+
+
+
 
         categoryAdapter=new CategoryAdapter(categoryName,getApplicationContext());
         homeBinding.categoryRecycler.setAdapter(categoryAdapter);

@@ -16,5 +16,12 @@
     <color name="selected_color">#55555555</color> <!-- Highlight color -->
     <color name="channel_background">#2D2D2D</color>
     <color name="semi_trasparent">#20FFFFFF</color>
+    <color name="romantic">#CC9A8FAA</color>
+    <color name="thiller">#CCCA9F9F</color>
+    <color name="horror">#CCCDB3A2</color>
+    <color name="scifi">#CCBBD4D7</color>
+    <color name="adventure">#CC9FB2A8</color>
+    <color name="comedy">#CCA5B58A</color>
+    <color name="tab_indicator_color">#8B2475</color>
 
 </resources>

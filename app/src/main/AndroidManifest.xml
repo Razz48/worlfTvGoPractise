@@ -17,10 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
-            android:exported="true"
+            android:name=".Player"
+            android:exported="true" >
 
-            >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,22 +28,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LiveTv"
+            android:name=".TvShows"
             android:exported="false"
             android:screenOrientation="landscape">
 
         </activity>
         <activity
+            android:name=".HomeActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".LiveTv"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".ResetPassword"
             android:exported="false"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LoginActivity"
             android:exported="false"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".CreateAccountActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

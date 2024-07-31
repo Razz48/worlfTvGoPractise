@@ -8,10 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.worldtvgo.Model.Category;
+import com.example.worldtvgo.Model.GenreItem;
+import com.example.worldtvgo.Model.InnerItem;
 import com.example.worldtvgo.R;
 
 import java.util.List;
@@ -38,7 +41,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         Category category=categoryName.get(position);
         holder.categoryName.setText(category.getName());
 
-        InnerAdapter innerAdapter=new InnerAdapter(category.getItems(),context);
+        List<InnerItem> innerItems=(List<InnerItem>)(List<?>) category.getItems() ;
+        InnerAdapter innerAdapter=new InnerAdapter(innerItems,context);
         holder.innerRecyclerView.setAdapter(innerAdapter);
         holder.innerRecyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
 

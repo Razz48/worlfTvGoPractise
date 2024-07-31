@@ -24,7 +24,6 @@ public class InnerAdapter extends RecyclerView.Adapter<InnerAdapter.ViewHolder> 
         this.innerItems = innerItems;
         this.context=context;
     }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

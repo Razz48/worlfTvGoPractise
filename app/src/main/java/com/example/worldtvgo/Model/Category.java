@@ -3,11 +3,10 @@ package com.example.worldtvgo.Model;
 import java.util.List;
 
 public class Category {
+    private String name;
+    private List<Object> items; // List to store either InnerItem or GenreItem
 
-    private final String name;
-    private final List<InnerItem> items;
-
-    public Category(String name, List<InnerItem> items) {
+    public Category(String name, List<Object> items) {
         this.name = name;
         this.items = items;
     }
@@ -16,7 +15,17 @@ public class Category {
         return name;
     }
 
-    public List<InnerItem> getItems() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Object> getItems() {
         return items;
     }
+
+    public void setItems(List<Object> items) {
+        this.items = items;
+    }
 }
+
+
