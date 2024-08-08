@@ -18,9 +18,9 @@ import androidx.media3.exoplayer.source.ProgressiveMediaSource;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.worldtvgo.Adapter.CategoryListAdapter;
-import com.example.worldtvgo.Adapter.ChannelListAdapter;
-import com.example.worldtvgo.Model.Channel;
+import com.example.worldtvgo.Adapter.LiveTv.CategoryListAdapter;
+import com.example.worldtvgo.Adapter.LiveTv.ChannelListAdapter;
+import com.example.worldtvgo.Model.LiveTv.Channel;
 import com.example.worldtvgo.databinding.ActivityLiveTvListBinding;
 import com.example.worldtvgo.databinding.CustomPlaybackControlViewBinding;
 

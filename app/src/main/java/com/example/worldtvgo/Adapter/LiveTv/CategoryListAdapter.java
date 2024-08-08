@@ -1,4 +1,4 @@
-package com.example.worldtvgo.Adapter;
+package com.example.worldtvgo.Adapter.LiveTv;
 
 import android.view.LayoutInflater;
 import android.view.View;

@@ -1,33 +1,22 @@
 package com.example.worldtvgo.Fragment;
 
-import static android.content.Context.LAYOUT_INFLATER_SERVICE;
-import static androidx.core.content.ContextCompat.getSystemService;
-
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.worldtvgo.Adapter.TrailerAdapter;
-import com.example.worldtvgo.Model.TrailerItem;
+import com.example.worldtvgo.Adapter.TvShows.TrailerAdapter;
+import com.example.worldtvgo.Model.TvShows.TrailerItem;
 import com.example.worldtvgo.R;
 import com.example.worldtvgo.databinding.FragmentSeasonBinding;
 import com.google.android.material.tabs.TabLayout;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -54,7 +43,7 @@ public class SeasonFragment extends Fragment {
         trailerList = new ArrayList<>();
 
         seasonBinding.episodeRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 4));
-        trailerAdapter = new TrailerAdapter(getContext(), trailerList);
+        trailerAdapter = new TrailerAdapter(getContext(), trailerList,false);
         seasonBinding.episodeRecyclerView.setAdapter(trailerAdapter);
 
 

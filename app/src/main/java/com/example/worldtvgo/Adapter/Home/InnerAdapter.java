@@ -1,4 +1,4 @@
-package com.example.worldtvgo.Adapter;
+package com.example.worldtvgo.Adapter.Home;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.worldtvgo.Model.InnerItem;
+import com.example.worldtvgo.Model.Home.InnerItem;
 import com.example.worldtvgo.R;
 
 import java.util.List;

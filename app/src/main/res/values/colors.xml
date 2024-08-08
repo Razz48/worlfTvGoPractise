@@ -23,5 +23,6 @@
     <color name="adventure">#CC9FB2A8</color>
     <color name="comedy">#CCA5B58A</color>
     <color name="tab_indicator_color">#8B2475</color>
+    <color name="Movie_title">#D4FFFFFF</color>
 
 </resources>

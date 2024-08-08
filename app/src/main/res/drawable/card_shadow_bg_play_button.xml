@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tab_indicator_color"/> <!-- Pink color -->
+            <corners android:radius="8dp"/> <!-- Corner radius to match CardView -->
+        </shape>
+    </item>
+    <item android:top="1dp" android:left="1dp" android:right="1dp" android:bottom="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tab_indicator_color"/> <!-- CardView background color -->
+            <corners android:radius="8dp"/> <!-- Corner radius to match CardView -->
+        </shape>
+    </item>
+</layer-list>

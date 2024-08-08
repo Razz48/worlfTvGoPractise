@@ -6,14 +6,12 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.worldtvgo.Adapter.CategoryAdapter;
+import com.example.worldtvgo.Adapter.Home.CategoryAdapter;
 
-import com.example.worldtvgo.Model.Category;
-import com.example.worldtvgo.Model.GenreItem;
-import com.example.worldtvgo.Model.InnerItem;
+import com.example.worldtvgo.Model.Home.Category;
+import com.example.worldtvgo.Model.Home.InnerItem;
 import com.example.worldtvgo.databinding.ActivityHomeBinding;
 
 import java.util.ArrayList;

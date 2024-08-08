@@ -8,16 +8,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.worldtvgo.Adapter.TrailerAdapter;
+import com.example.worldtvgo.Adapter.TvShows.TrailerAdapter;
 import com.example.worldtvgo.Fragment.SeasonFragment;
 import com.example.worldtvgo.Fragment.SynopsisFragment;
-import com.example.worldtvgo.Model.TrailerItem;
+import com.example.worldtvgo.Model.TvShows.TrailerItem;
 import com.example.worldtvgo.databinding.ActivityTvShowsBinding;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TvShows extends AppCompatActivity {

@@ -52,5 +52,8 @@ dependencies {
 
     implementation ("androidx.appcompat:appcompat:1.6.1")
 
+    //shimmer effect
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
 
 }

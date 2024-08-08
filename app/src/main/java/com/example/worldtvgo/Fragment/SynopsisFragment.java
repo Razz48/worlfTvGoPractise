@@ -9,10 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.worldtvgo.Adapter.TrailerAdapter;
-import com.example.worldtvgo.Model.TrailerItem;
+import com.example.worldtvgo.Adapter.TvShows.TrailerAdapter;
+import com.example.worldtvgo.Model.TvShows.TrailerItem;
 import com.example.worldtvgo.R;
-import com.example.worldtvgo.databinding.FragmentSeasonBinding;
 import com.example.worldtvgo.databinding.FragmentSynopsisBinding;
 
 import java.util.ArrayList;
@@ -35,7 +34,7 @@ public class SynopsisFragment extends Fragment {
         trailerList=new ArrayList<>();
 
         populateData();
-        trailerAdapter=new TrailerAdapter(getContext(),trailerList);
+        trailerAdapter=new TrailerAdapter(getContext(),trailerList,false);
         synopsisBinding.trailerRecycler.setAdapter(trailerAdapter);
 
         return view;

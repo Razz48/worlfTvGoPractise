@@ -1,4 +1,4 @@
-package com.example.worldtvgo.Model.TvList;
+package com.example.worldtvgo.Model.TvShows;
 
 
 import java.util.List;
