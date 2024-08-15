@@ -5,15 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Player">
+    tools:context=".MoviePlayer">
 
     <androidx.media3.ui.PlayerView
-        android:id="@+id/player"
+        android:id="@+id/player_View"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:hide_on_touch="true"
         app:resize_mode="fit"
-        app:show_timeout="3000"
+        app:show_timeout="100000"
+        app:animation_enabled="false"
+        app:controller_layout_id="@layout/custom_control_movie_player"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

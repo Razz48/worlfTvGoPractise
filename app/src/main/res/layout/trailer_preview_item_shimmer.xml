@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,9 +19,9 @@
 
         <ImageView
             android:id="@+id/trailer_image"
-            android:layout_width="275dp"
-            android:layout_height="155dp"
-            android:background="#545454"
+            android:layout_width="265dp"
+            android:layout_height="145dp"
+            android:background="@drawable/trailer_preview_item_image_shinner"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +29,7 @@
             android:id="@+id/trailer_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#545454"
+            android:background="@drawable/trailer_preview_item_txt_shinner"
             android:layout_marginTop="3dp"
             android:text="After witnessing Tanishaa Mukerji's sizzling performance"
             android:textColor="#545454"
@@ -42,8 +43,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Preview"
-            android:background="#545454"
+            android:background="@drawable/trailer_preview_item_txt_shinner"
             android:textColor="#545454"
+
             app:layout_constraintEnd_toEndOf="@id/trailer_title"
             app:layout_constraintStart_toStartOf="@id/trailer_title"
             app:layout_constraintTop_toBottomOf="@id/trailer_title" />

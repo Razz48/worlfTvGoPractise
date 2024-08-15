@@ -68,7 +68,7 @@
                 android:id="@+id/year_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#545454"
+                android:background="@drawable/trailer_preview_item_txt_shinner"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/movie_name"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sfprodisplaybold"
-                android:background="#545454"
+                android:background="@drawable/trailer_preview_item_txt_shinner"
                 android:textSize="40sp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/timing_ll"
@@ -92,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:background="#545454"
+                android:background="@drawable/trailer_preview_item_txt_shinner"
                 android:layout_marginTop="18dp"
                 app:layout_constraintBottom_toTopOf="@+id/third_ll"
                 app:layout_constraintStart_toStartOf="parent"
@@ -108,6 +108,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/trailer_preview_item_txt_shinner"
 
 
                     android:textSize="14sp" />
@@ -127,19 +128,44 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sfprodisplaybold"
-                    android:background="#545454"
+                    android:background="@drawable/trailer_preview_item_txt_shinner"
                     android:textSize="18sp"
-
-                    app:layout_constraintBottom_toTopOf="@+id/cast_recycler"
+                    app:layout_constraintBottom_toTopOf="@+id/cast_shimmer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/cast_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/synopsis_ll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cast_text">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <include layout="@layout/cast_item_shimmer"/>
+                        <include layout="@layout/cast_item_shimmer"/>
+                        <include layout="@layout/cast_item_shimmer"/>
+                        <include layout="@layout/cast_item_shimmer"/>
+                        <include layout="@layout/cast_item_shimmer"/>
+                        <include layout="@layout/cast_item_shimmer"/>
+                        <include layout="@layout/cast_item_shimmer"/>
+                        <include layout="@layout/cast_item_shimmer"/>
+                        <include layout="@layout/cast_item_shimmer"/>
+                    </LinearLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/cast_recycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#545454"
+                    android:visibility="gone"
                     android:layout_marginTop="14dp"
                     app:layout_constraintBottom_toTopOf="@+id/synopsis_ll"
                     app:layout_constraintStart_toStartOf="parent"
@@ -152,25 +178,26 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginTop="24dp"
-                    android:background="#545454"
                     app:layout_constraintBottom_toTopOf="@+id/trailer_text"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cast_recycler">
+                    app:layout_constraintTop_toBottomOf="@+id/cast_shimmer">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/sfprodisplaybold"
+                        android:background="@drawable/trailer_preview_item_txt_shinner"
+
 
                         android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="10dp"
                         android:ellipsize="end"
                         android:maxLines="3"
-                        android:background="#545454"
+                        android:background="@drawable/trailer_preview_item_txt_shinner"
                         />
                 </LinearLayout>
 
@@ -180,13 +207,38 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sfprodisplaybold"
                     android:layout_marginTop="24dp"
-                    android:background="#545454"
+                    android:background="@drawable/trailer_preview_item_txt_shinner"
                     android:textSize="18sp"
-                    app:layout_constraintBottom_toTopOf="@+id/trailer_recycler"
+                    app:layout_constraintBottom_toTopOf="@+id/trailer_shimmer"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/synopsis_ll" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/trailer_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/trailer_text">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <include layout="@layout/trailer_preview_item_shimmer"/>
+                        <include layout="@layout/trailer_preview_item_shimmer"/>
+                        <include layout="@layout/trailer_preview_item_shimmer"/>
+                        <include layout="@layout/trailer_preview_item_shimmer"/>
+                        <include layout="@layout/trailer_preview_item_shimmer"/>
+                        <include layout="@layout/trailer_preview_item_shimmer"/>
+                        <include layout="@layout/trailer_preview_item_shimmer"/>
+
+
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/trailer_recycler"
@@ -194,6 +246,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
                     android:background="#545454"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/trailer_text" />

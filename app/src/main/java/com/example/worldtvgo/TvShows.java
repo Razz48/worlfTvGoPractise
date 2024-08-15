@@ -1,8 +1,12 @@
 package com.example.worldtvgo;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.RatingBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -14,6 +18,7 @@ import com.example.worldtvgo.Fragment.SeasonFragment;
 import com.example.worldtvgo.Fragment.SynopsisFragment;
 import com.example.worldtvgo.Model.TvShows.TrailerItem;
 import com.example.worldtvgo.databinding.ActivityTvShowsBinding;
+import com.example.worldtvgo.databinding.TvShowsItemBinding;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
@@ -36,8 +41,30 @@ public class TvShows extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         tvShowsBinding=ActivityTvShowsBinding.inflate(getLayoutInflater());
         View view=tvShowsBinding.getRoot();
+        TvShowsItemBinding tvShowsItemBinding=TvShowsItemBinding.bind(tvShowsBinding.originalData.findViewById(R.id.tv_show_detail_main));
+
 
         setContentView(view);
+
+        tvShowsBinding.originalData.setVisibility(View.INVISIBLE);
+        tvShowsBinding.viewShimmer.startShimmer();
+        SynopsisFragment synopsisFragment=new SynopsisFragment();
+        FragmentManager fm=getSupportFragmentManager();
+        FragmentTransaction ft=fm.beginTransaction();
+        ft.add(R.id.frame_layout,synopsisFragment).commit();
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                tvShowsBinding.viewShimmer.setVisibility(View.INVISIBLE);
+                tvShowsBinding.viewShimmer.stopShimmer();
+                tvShowsBinding.originalData.setVisibility(View.VISIBLE);
+            }
+        },2000);
+
+        RatingBar ratingBar = tvShowsItemBinding.ratingBar;
+        Drawable drawable = ratingBar.getProgressDrawable();
+        drawable.setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_ATOP);
 //
 //        tvShowsBinding.trailerRecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 //        trailerList=new ArrayList<>();
@@ -46,12 +73,11 @@ public class TvShows extends AppCompatActivity {
 //       trailerAdapter=new TrailerAdapter(getApplicationContext(),trailerList);
 //       tvShowsBinding.trailerRecycler.setAdapter(trailerAdapter);
 
-        SynopsisFragment synopsisFragment=new SynopsisFragment();
-        FragmentManager fm=getSupportFragmentManager();
-        FragmentTransaction ft=fm.beginTransaction();
-        ft.add(R.id.frame_layout,synopsisFragment).commit();
 
-        tvShowsBinding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+
+
+        tvShowsItemBinding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 

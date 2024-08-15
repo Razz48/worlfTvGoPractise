@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingVertical="5dp"
+    android:background="@drawable/popup_setting_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_ll"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/quality_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_back_ios_24"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subtitle"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/white"
+                android:gravity="start"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/sfprodisplaybold"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="1"
+        app:layout_constraintTop_toBottomOf="@id/header_ll">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/quality_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".30">
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_quality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/radio_subtitle_english"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="English"
+                    android:padding="15dp"
+                    android:textColor="@color/white"/>
+
+                <RadioButton
+                    android:id="@+id/radio_subtitle_french"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="French"
+                    android:padding="10dp"
+                    android:textColor="@color/white"/>
+
+                <RadioButton
+                    android:id="@+id/radio_subtitle_german"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="German"
+                    android:padding="10dp"
+                    android:textColor="@color/white"/>
+
+                <RadioButton
+                    android:id="@+id/radio_subtitle_finish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Finish"
+                    android:padding="10dp"
+                    android:textColor="@color/white"/>
+
+
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

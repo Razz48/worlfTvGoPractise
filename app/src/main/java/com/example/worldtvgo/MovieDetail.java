@@ -1,5 +1,6 @@
 package com.example.worldtvgo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.worldtvgo.Adapter.TvShows.TrailerAdapter;
 import com.example.worldtvgo.Model.TvShows.Cast;
 import com.example.worldtvgo.Model.TvShows.TrailerItem;
 import com.example.worldtvgo.databinding.ActivityMovieDetailBinding;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +43,20 @@ public class MovieDetail extends AppCompatActivity {
         cast_recycler=detailItemLayout.findViewById(R.id.cast_recycler);
         trailer_recycler=detailItemLayout.findViewById(R.id.trailer_recycler);
 
-        setShimmerPlaceholderItems();
+//        castShimmer=placeholderLayout.findViewById(R.id.cast_shimmer);
+//        trailerShimmer=placeholderLayout.findViewById(R.id.trailer_shimmer);
+
+        // Set up shimmer effect
+        movieDetailBinding.shimmerView.startShimmer();
+
+
+
+        movieDetailBinding.originalData.setVisibility(View.INVISIBLE);
+
+
+
+
+
 
         handler.postDelayed(new Runnable() {
             @Override
@@ -50,47 +65,35 @@ public class MovieDetail extends AppCompatActivity {
                 movieDetailBinding.shimmerView.stopShimmer();
                 movieDetailBinding.shimmerView.setVisibility(View.INVISIBLE);
                 // Code to execute after 5 seconds
+                populateData();
+                populateCastDetail();
             }
-        }, 5000); // 5000 milliseconds = 5 seconds
+        }, 1000); // 5000 milliseconds = 5 seconds
 
-        trailer_recycler.setLayoutManager(new LinearLayoutManager(this
-                ,LinearLayoutManager.HORIZONTAL,false));
-        trailerList=new ArrayList<>();
-
-        movieDetailBinding.originalData.setVisibility(View.INVISIBLE);
-        movieDetailBinding.shimmerView.startShimmer();
-
-
-        populateData();
-        trailerAdapter=new TrailerAdapter(getApplicationContext(),trailerList,false);
-        trailer_recycler.setAdapter(trailerAdapter);
-
-
-        cast_recycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        cast=new ArrayList<>();
-        populateCastDetail();
-        castAdapter=new CastAdapter(cast);
-        cast_recycler.setAdapter(castAdapter);
+        movieDetailBinding.originalData.findViewById(R.id.play_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MovieDetail.this,MoviePlayer.class);
+                startActivity(intent);
+            }
+        });
 
 
 
 
-    }
-
-    private void setShimmerPlaceholderItems() {
-        List<TrailerItem> shimmerList = new ArrayList<>();
-        for (int i = 0; i < 5; i++) { // Number of shimmer items
-            shimmerList.add(new TrailerItem("","",R.drawable.trailer_preview_shimmer)); // Add empty or placeholder items
-        }
-        trailerAdapter = new TrailerAdapter(getApplicationContext(), shimmerList, true); // Pass true for shimmer mode
-        trailer_recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        trailer_recycler.setAdapter(trailerAdapter);
 
     }
 
 
 
     private void populateCastDetail() {
+        cast=new ArrayList<>();
+        //set up cast recycler view
+        cast_recycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+
+        castAdapter=new CastAdapter(cast);
+        cast_recycler.setAdapter(castAdapter);
+
 
         cast.add(new Cast(R.drawable.farah,"Farah Khan"));
         cast.add(new Cast(R.drawable.farah,"Farah Khan"));
@@ -106,6 +109,14 @@ public class MovieDetail extends AppCompatActivity {
     }
 
     private void populateData() {
+        trailerList=new ArrayList<>();
+
+        // Set up trailer RecyclerView
+        trailer_recycler.setLayoutManager(new LinearLayoutManager(this
+                ,LinearLayoutManager.HORIZONTAL,false));
+        trailerAdapter=new TrailerAdapter(getApplicationContext(),trailerList,false);
+        trailer_recycler.setAdapter(trailerAdapter);
+
 
         trailerList.add(new TrailerItem("After witnessing Tanishaa Mukerji’s sizzling performance...","Preview",R.drawable.trailer_preview));
         trailerList.add(new TrailerItem("After witnessing Tanishaa Mukerji’s sizzling performance...","Preview",R.drawable.trailer_preview));

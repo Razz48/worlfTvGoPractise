@@ -17,6 +17,7 @@
 
     <include layout="@layout/movie_detail_placeholder" />
 
+
     </com.facebook.shimmer.ShimmerFrameLayout>
 
     <LinearLayout

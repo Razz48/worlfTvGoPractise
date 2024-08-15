@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import com.example.worldtvgo.Adapter.TvShows.TrailerAdapter;
 import com.example.worldtvgo.Model.TvShows.TrailerItem;
 import com.example.worldtvgo.R;
 import com.example.worldtvgo.databinding.FragmentSeasonBinding;
+import com.example.worldtvgo.databinding.SeasonDetailItemBinding;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -30,25 +32,54 @@ public class SeasonFragment extends Fragment {
 
     FragmentSeasonBinding seasonBinding;
 
+    Handler handler=new Handler();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         seasonBinding=FragmentSeasonBinding.inflate(getLayoutInflater());
         View view=seasonBinding.getRoot();
+        SeasonDetailItemBinding seasonDetailItemBinding=SeasonDetailItemBinding.bind(seasonBinding.originalData.findViewById(R.id.season_detai_item_root));
 
 
+        seasonBinding.shimmerView.startShimmer();
+        seasonBinding.originalData.setVisibility(View.INVISIBLE);
         // Setup RecyclerView
 
         trailerList = new ArrayList<>();
 
-        seasonBinding.episodeRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 4));
-        trailerAdapter = new TrailerAdapter(getContext(), trailerList,false);
-        seasonBinding.episodeRecyclerView.setAdapter(trailerAdapter);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                seasonBinding.shimmerView.setVisibility(View.INVISIBLE);
+                seasonBinding.shimmerView.stopShimmer();
+                seasonBinding.originalData.setVisibility(View.VISIBLE);
+
+
+                seasonDetailItemBinding.episodeRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 4));
+                trailerAdapter = new TrailerAdapter(getContext(), trailerList,false);
+                seasonDetailItemBinding.episodeRecyclerView.setAdapter(trailerAdapter);
+
+
+                loadSeason(0);
+            }
+        },2000);
+
+
+        //creating a space between each tabitem
+        for(int i=0; i < seasonDetailItemBinding.seasonTab.getTabCount(); i++) {
+            View tab = ((ViewGroup) seasonDetailItemBinding.seasonTab.getChildAt(0)).getChildAt(i);
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) tab.getLayoutParams();
+            p.setMargins(0, 0, 20, 0);
+            tab.requestLayout();
+
+        }
 
 
         // Setup TabLayout with listener
-        seasonBinding.seasonTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        seasonDetailItemBinding.seasonTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position=tab.getPosition();
@@ -67,7 +98,7 @@ public class SeasonFragment extends Fragment {
         });
 
 
-        loadSeason(0);
+
 
 
 

@@ -70,9 +70,6 @@ public class LiveTv extends AppCompatActivity implements CategoryListAdapter.OnC
         exoPlayer=new ExoPlayer.Builder(this).build();
         liveTvListBinding.playerView.setPlayer(exoPlayer);
 
-        exoPlayer = new ExoPlayer.Builder(this).build();
-        liveTvListBinding.playerView.setPlayer(exoPlayer);
-
 
 
 
